@@ -1,6 +1,14 @@
 let humanScore = 0;
 let computerScore = 0;
 
+/*
+const rock = document.querySelector(".urock");
+const paper = document.querySelector(".upaper");
+const scissors = document.querySelector(".uscissors");
+*/
+
+const buttons = document.querySelectorAll(".buttons");
+
 function getComputerChoice() {
     let randomNum = Math.floor((Math.random() * 100));
     if (randomNum === 0) {
@@ -14,16 +22,13 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let humanChoice = prompt("Choose your pick: rock, paper, or scissors.");
-    if ((humanChoice === "rock") || (humanChoice === "paper") || (humanChoice === "scissors")) {
-        return humanChoice;
-    }
-    else {
-        prompt("Your input was invalid, try again");
-        return humanChoice;
-    }
-}
+buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const humanChoice = btn.id;
+        const computerChoice = getComputerChoice();
+        playRound(computerChoice, humanChoice)
+    });
+})
 
 function playRound(computerChoice, humanChoice) {
     if (humanChoice === "rock") {
