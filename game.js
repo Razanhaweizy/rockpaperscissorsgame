@@ -9,6 +9,8 @@ const scissors = document.querySelector(".uscissors");
 
 const buttons = document.querySelectorAll(".buttons");
 
+const result = document.querySelector("p");
+
 function getComputerChoice() {
     let randomNum = Math.floor((Math.random() * 100));
     if (randomNum === 0) {
@@ -33,14 +35,14 @@ buttons.forEach((btn) => {
 function playRound(computerChoice, humanChoice) {
     if (humanChoice === "rock") {
         switch (computerChoice) {
-            case "rock": console.log("You have drawn!"); break;
+            case "rock": result.textContent = "You have drawn!"; break;
             case "paper": {
-                console.log("You lose :(");
+                result.textContent = "You lose :(";
                 computerScore++;
                 break;
             }
             case "scissors": {
-                console.log("You win!!! :)");
+                result.textContent = "You win!!! :)";
                 humanScore++;
                 break;
             }
@@ -49,13 +51,13 @@ function playRound(computerChoice, humanChoice) {
     else if (humanChoice === "paper") {
         switch(computerChoice) {
             case "rock": {
-                console.log("You win! Yippie!!!");
+                result.textContent = "You win! Yippie!!!";
                 humanScore++;
                 break;
             }
-            case "paper": console.log("Draw ;/"); break;
+            case "paper": result.textContent = "Draw ;/"; break;
             case "scissors": {
-                console.log("Loser!!!");
+                result.textContent = "Loser!!!";
                 computerScore++;
                 break;
             }
@@ -64,16 +66,16 @@ function playRound(computerChoice, humanChoice) {
     else if (humanChoice === "scissors") {
         switch(computerChoice) {
             case "rock": {
-                console.log("Boohoo, you lose :(");
+                result.textContent = "Boohoo, you lose :(";
                 computerScore++;
                 break;
             }
             case "paper": {
-                console.log("Congrats! You win :)");
+                result.textContent = "Congrats! You win :)";
                 humanScore++;
                 break;
             }
-            case "scissors": console.log("You tied ;/"); break;
+            case "scissors": result.textContent = "You tied ;/"; break;
         }
     }
 }
