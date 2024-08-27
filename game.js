@@ -1,12 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
 
-/*
-const rock = document.querySelector(".urock");
-const paper = document.querySelector(".upaper");
-const scissors = document.querySelector(".uscissors");
-*/
-
 const buttons = document.querySelectorAll(".buttons");
 const result = document.querySelector(".result");
 const hScore = document.querySelector(".human-score");
@@ -29,18 +23,19 @@ buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const humanChoice = btn.id;
         const computerChoice = getComputerChoice();
-        playRound(computerChoice, humanChoice)
+        if (computerScore < 5 && humanScore < 5) {
+        playRound(computerChoice, humanChoice);
+        }
+        if (computerScore >= 5) {
+            return result.textContent = "you lost the game";
+        }
+        else if (humanScore >= 5) {
+            return result.textContent = "you won the game";
+        }
     });
 })
 
 function playRound(computerChoice, humanChoice) {
-
-    if (computerScore == 5) {
-        return result.textContent = "you lost the game";
-    }
-    else if (humanScore == 5) {
-        return result.textContent = "you won the game";
-    }
 
     if (humanChoice === "rock") {
         switch (computerChoice) {
