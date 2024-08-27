@@ -8,8 +8,9 @@ const scissors = document.querySelector(".uscissors");
 */
 
 const buttons = document.querySelectorAll(".buttons");
-
-const result = document.querySelector("p");
+const result = document.querySelector(".result");
+const hScore = document.querySelector(".human-score");
+const cScore = document.querySelector(".computer-score");
 
 function getComputerChoice() {
     let randomNum = Math.floor((Math.random() * 100));
@@ -38,12 +39,12 @@ function playRound(computerChoice, humanChoice) {
             case "rock": result.textContent = "You have drawn!"; break;
             case "paper": {
                 result.textContent = "You lose :(";
-                computerScore++;
+                cScore.textContent = `computer score: ${computerScore++}`;
                 break;
             }
             case "scissors": {
                 result.textContent = "You win!!! :)";
-                humanScore++;
+                hScore.textContent= `player score: ${humanScore++}`;
                 break;
             }
         }
@@ -52,13 +53,13 @@ function playRound(computerChoice, humanChoice) {
         switch(computerChoice) {
             case "rock": {
                 result.textContent = "You win! Yippie!!!";
-                humanScore++;
+                hScore.textContent = `player score: ${humanScore++}`;
                 break;
             }
             case "paper": result.textContent = "Draw ;/"; break;
             case "scissors": {
                 result.textContent = "Loser!!!";
-                computerScore++;
+                cScore.textContent = `computer score: ${computerScore++}`;
                 break;
             }
         }
@@ -67,12 +68,12 @@ function playRound(computerChoice, humanChoice) {
         switch(computerChoice) {
             case "rock": {
                 result.textContent = "Boohoo, you lose :(";
-                computerScore++;
+                cScore.textContent = `computer score: ${computerScore++}`;
                 break;
             }
             case "paper": {
                 result.textContent = "Congrats! You win :)";
-                humanScore++;
+                hScore.textContent = `player score: ${humanScore++}`;
                 break;
             }
             case "scissors": result.textContent = "You tied ;/"; break;
