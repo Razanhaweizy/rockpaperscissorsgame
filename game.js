@@ -6,6 +6,11 @@ const result = document.querySelector(".result");
 const hScore = document.querySelector(".human-score");
 const cScore = document.querySelector(".computer-score");
 
+result.style.color = "#ffff0b"
+
+const playzone = document.querySelector("#gamearea");
+playzone.appendChild(result)
+
 function getComputerChoice() {
     let randomNum = Math.floor((Math.random() * 100));
     if (randomNum === 0) {

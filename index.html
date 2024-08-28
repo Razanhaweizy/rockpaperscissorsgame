@@ -8,28 +8,31 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <div>
-            <ul class="links">
-                <li><button>home</button></li>
-                <li><button>about</button></li>
-                <li><button>restart</button></li>
-            </ul>
+    <div id="gamearea">
+        <div id="player" class="box">
+            <h1 class="title">PLAYER</h1>
+            <p class="human-score">player score: 0</p>
+                <div class="selections">
+                <div class="selection" id="rock">
+                    <button class="buttons" id="rock">rock</button>
+                    <img class="imgs" id="rockimg" src="pngs/rock.png">
+                </div>
+                <div class="selection" id="paper">
+                    <button class="buttons" id="paper">paper</button>
+                    <img class="imgs" id="paperimg" src="pngs/paper.png">
+                </div>
+                <div class="selection" id="scissors">
+                    <button class="buttons" id="scissors">scissors</button>
+                    <img class="imgs" id="scissorsimg" src="pngs/scissors.png">
+                </div>
+                </div>
+        </div>
+        <div id="computer" class="box">
+            <p class="computer-score">computer score: 0</p>
         </div>
     </div>
-    <div id="scores">
-        <p class="human-score">player score: 0</p>
-        <p class="computer-score">computer score: 0</p>
-    </div>
-    <div id="playerbuttons">
-        <ul>
-            <li><button class="buttons" id="rock">rock</button></li>
-            <li><button class="buttons" id="paper">paper</button></li>
-            <li><button class="buttons" id="scissors">scissors</button></li>
-        </ul>
-    </div>
-    <div id="result">
-        <p class="result"> </p>
+    <div id="results">
+        <p class="result"></p>
     </div>
 </body>
 </html>
