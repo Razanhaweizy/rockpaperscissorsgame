@@ -12,6 +12,11 @@ const compRock = document.querySelector("#computerrock");
 const compPaper = document.querySelector("#computerpaper");
 const compScissors = document.querySelector("#computerscissors");
 
+const restartSound = new Audio("audios/restart.wav");
+const drawSound = new Audio("audios/draw.wav");
+const roundWon = new Audio("audios/roundwon.wav");
+const roundLost = new Audio("audios/roundlost.wav");
+
 const restart = document.querySelector(".restart");
 
 restart.addEventListener("click", () => {
@@ -19,6 +24,7 @@ restart.addEventListener("click", () => {
     computerScore = 0;
     hScore.textContent = "player score: 0";
     cScore.textContent = "computer score: 0"
+    restartSound.play();
 })
 
 function getComputerChoice() {
@@ -60,15 +66,17 @@ function playRound(computerChoice, humanChoice, btnClicked) {
 
     if (humanChoice === "rock") {
         switch (computerChoice) {
-            //case "rock": result.textContent = "You have drawn!"; break;
+            case "rock": drawSound.play(); break;
             case "paper": {
                 //result.textContent = "You lose :(";
                 cScore.textContent = `computer score: ${++computerScore}`;
+                roundLost.play();
                 break;
             }
             case "scissors": {
                 //result.textContent = "You win!!! :)";
                 hScore.textContent= `player score: ${++humanScore}`;
+                roundWon.play();
                 break;
             }
         }
@@ -78,29 +86,33 @@ function playRound(computerChoice, humanChoice, btnClicked) {
             case "rock": {
                 //result.textContent = "You win! Yippie!!!";
                 hScore.textContent = `player score: ${++humanScore}`;
+                roundWon.play();
                 break;
             }
-            //case "paper": result.textContent = "Draw ;/"; break;
+            case "paper": drawSound.play(); break;
             case "scissors": {
                 //result.textContent = "Loser!!!";
                 cScore.textContent = `computer score: ${++computerScore}`;
+                roundLost.play();
                 break;
             }
         }
     }
     else if (humanChoice === "scissors") {
         switch(computerChoice) {
+            case "scissors": drawSound.play(); break;
             case "rock": {
                 //result.textContent = "Boohoo, you lose :(";
                 cScore.textContent = `computer score: ${++computerScore}`;
+                roundLost.play();
                 break;
             }
             case "paper": {
                 //result.textContent = "Congrats! You win :)";
                 hScore.textContent = `player score: ${++humanScore}`;
+                roundWon.play();
                 break;
             }
-            //case "scissors": result.textContent = "You tied ;/"; break;
         }
     }
     colorButton(btn, originalHumanScore, originalComputerScore, cChoice);
@@ -138,4 +150,3 @@ function colorButton(buttonClicked, originalHScore, originalCScore, compChoice) 
             compElement.style.backgroundColor = "#efefef";
         }, 1100);
   }
-
