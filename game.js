@@ -111,7 +111,6 @@ function colorButton(buttonClicked, originalHScore, originalCScore, compChoice) 
         compElement = compScissors;
     }
 
-    if (buttonClicked.classList.contains("buttons")) {
         if (humanScore > originalHScore) {
             buttonClicked.style.backgroundColor = "#52a447";
             compElement.style.backgroundColor = "#FF0000";
@@ -125,6 +124,10 @@ function colorButton(buttonClicked, originalHScore, originalCScore, compChoice) 
             compElement.style.backgroundColor = "#FBE106";
 
         }
-    }
+        
+        setTimeout(() => {
+            buttonClicked.style.backgroundColor ="#efefef";
+            compElement.style.backgroundColor = "#efefef";
+        }, 1000);
   }
 
