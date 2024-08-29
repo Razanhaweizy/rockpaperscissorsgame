@@ -8,12 +8,18 @@ const cScore = document.querySelector(".computer-score");
 
 result.style.color = "#ffff0b"
 
-const playzone = document.querySelector("#gamearea");
-playzone.appendChild(result)
-
 const compRock = document.querySelector("#computerrock");
 const compPaper = document.querySelector("#computerpaper");
 const compScissors = document.querySelector("#computerscissors");
+
+const restart = document.querySelector(".restart");
+
+restart.addEventListener("click", () => {
+    humanScore = 0;
+    computerScore = 0;
+    hScore.textContent = "player score: 0";
+    cScore.textContent = "computer score: 0"
+})
 
 function getComputerChoice() {
     let randomNum = Math.floor((Math.random() * 100));
@@ -36,10 +42,12 @@ buttons.forEach((btn) => {
         playRound(computerChoice, humanChoice, btn);
         }
         if (computerScore >= 5) {
-            return result.textContent = "you lost the game";
+            //return result.textContent = "you lost the game";
+            window.location.href = "lose.html";
         }
         else if (humanScore >= 5) {
-            return result.textContent = "you won the game";
+            //return result.textContent = "you won the game";
+            window.location.href = "win.html"
         }
     });
 })

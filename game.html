@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <script src="game.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <ul>
+            <li><button class="restart" class="clickable">restart</button></li>
+            <li><button class="clickable"><a href="index.html">exit</a></button></li>
+        </ul>
+    </div>
+    <div id="title">
+    <h1>ROCK, PAPER, SCISSORS</h1>
+    </div>
+    <div id="gamearea">
+        <div id="player" class="box">
+            <h1 class="title">PLAYER</h1>
+            <p class="human-score">player score: 0</p>
+                <div class="selections">
+                <div class="selection" id="rock">
+                    <button class="buttons" id="rock">rock</button>
+                    <img class="imgs" id="rockimg" src="pngs/rock.png">
+                </div>
+                <div class="selection" id="paper">
+                    <button class="buttons" id="paper">paper</button>
+                    <img class="imgs" id="paperimg" src="pngs/paper.png">
+                </div>
+                <div class="selection" id="scissors">
+                    <button class="buttons" id="scissors">scissors</button>
+                    <img class="imgs" id="scissorsimg" src="pngs/scissors.png">
+                </div>
+                </div>
+        </div>
+        <div id="computer" class="box">
+            <h1 class="title">COMPUTER</h1>
+            <p class="computer-score">computer score: 0</p>
+            <div class="selections">
+                <div class="selection">
+                    <button class="cbuttons" id="computerrock">rock</button>
+                    <img class="imgs" src="pngs/rock.png">
+                </div>
+                <div class="selection">
+                    <button class="cbuttons" id="computerpaper">paper</button>
+                    <img class="imgs" src="pngs/paper.png">
+                </div>
+                <div class="selection">
+                    <button class="cbuttons" id="computerscissors">scissors</button>
+                    <img class="imgs" src="pngs/scissors.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="results">
+        <p class="result"></p>
+    </div>
+</body>
+</html>

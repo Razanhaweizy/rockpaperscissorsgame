@@ -1,129 +1,128 @@
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgb(59, 59, 59);
-  font-family: monospace;
-  flex-direction: column;
-}
-
-#title {
-    justify-content: start;
-    align-items: start;
+    margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
-    margin-bottom: 0px;
-    color: #e9e7e7;
-    font-size: 20px;
-}
-
-#gamearea {
-    margin-top: 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    width: 80%;
-    max-width: 1200px;
-    gap: 50px;
-}
-
-.box {
-    flex: 1;
-    background-color: #9c9b9b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-}
-
-#player {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 20px;
-}
-#player .selections {
-    display: flex;
-    gap: 32px;
-    width: 100%;
-    justify-content: center;
-}
-
-#computer {
-    display: flex;
+    height: 100vh;
+    background-color: rgb(59, 59, 59);
+    font-family: monospace;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
+  }
 
-#computer .selections {
-    display: flex;
-    gap: 32px;
-    width: 100%;
-    justify-content: center;
-}
+  h1 {
+    color:#e9e7e7;
+  }
+  
+ .sbutton {
+    font-size: 40px;
+  }
 
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+  li {
+      list-style-type: none;
+  }
+  
+  ul {
+      display: flex;
+      gap: 16px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
 
-.selection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.buttons, .cbuttons {
-    font-size: 16px;
-    font-weight: bolder;
-    background-color: #efefef;
-    border: none;
-    border-radius: 25px;
-    color: #424242;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-bottom: 5px;
-}
-
-.cbuttons {
-    cursor: default;
-}
-
-.imgs {
-    width: 60px;
-    height: auto;
-    object-fit: contain;
-    mix-blend-mode: color-burn;
-}
-
-.computer-score, .human-score {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-}
-
-#results {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.result {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.selections {
-    flex-direction: row;
-}
-
-#computer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-}
+  #header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 16px;
+      color: white;
+  }
+  
+  #title {
+      margin-top: 60px;
+      color: #e9e7e7;
+      font-size: 20px;
+      margin-bottom: 0;
+      text-align: center;
+  }
+  
+  #gamearea {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      width: 80%;
+      max-width: 1200px;
+      gap: 50px;
+      margin-top: 0;
+  }
+  
+  .box {
+      flex: 1;
+      background-color: #9c9b9b;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+  }
+  
+  #player, #computer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+  
+  .selections {
+      display: flex;
+      gap: 32px;
+      width: 100%;
+      justify-content: center;
+  }
+  
+  .selection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  .buttons, .cbuttons, button {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #efefef;
+      border: none;
+      border-radius: 25px;
+      color: #424242;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-bottom: 5px;
+  }
+  
+  .cbuttons {
+      cursor: default;
+  }
+  
+  .imgs {
+      width: 60px;
+      height: auto;
+      object-fit: contain;
+      mix-blend-mode: color-burn;
+  }
+  
+  .computer-score, .human-score {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+  }
+  
+  #results {
+      margin-top: 20px;
+      text-align: center;
+  }
+  
+  .result {
+      font-size: 18px;
+      font-weight: bold;
+  }
+  
