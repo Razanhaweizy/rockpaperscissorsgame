@@ -11,6 +11,10 @@ result.style.color = "#ffff0b"
 const playzone = document.querySelector("#gamearea");
 playzone.appendChild(result)
 
+const compRock = document.querySelector("#computerrock");
+const compPaper = document.querySelector("#computerpaper");
+const compScissors = document.querySelector("#computerscissors");
+
 function getComputerChoice() {
     let randomNum = Math.floor((Math.random() * 100));
     if (randomNum === 0) {
@@ -29,7 +33,7 @@ buttons.forEach((btn) => {
         const humanChoice = btn.id;
         const computerChoice = getComputerChoice();
         if (computerScore < 5 && humanScore < 5) {
-        playRound(computerChoice, humanChoice);
+        playRound(computerChoice, humanChoice, btn);
         }
         if (computerScore >= 5) {
             return result.textContent = "you lost the game";
@@ -40,7 +44,11 @@ buttons.forEach((btn) => {
     });
 })
 
-function playRound(computerChoice, humanChoice) {
+function playRound(computerChoice, humanChoice, btnClicked) {
+    let originalHumanScore = humanScore;
+    let originalComputerScore = computerScore;
+    let cChoice = computerChoice;
+    let btn = btnClicked;
 
     if (humanChoice === "rock") {
         switch (computerChoice) {
@@ -87,4 +95,36 @@ function playRound(computerChoice, humanChoice) {
             //case "scissors": result.textContent = "You tied ;/"; break;
         }
     }
+    colorButton(btn, originalHumanScore, originalComputerScore, cChoice);
 }
+
+function colorButton(buttonClicked, originalHScore, originalCScore, compChoice) {
+    let compElement;
+
+    if (compChoice === "rock") {
+        compElement = compRock;
+    }
+    else if (compChoice === "paper") {
+        compElement = compPaper;
+    }
+    else if (compChoice === "scissors") {
+        compElement = compScissors;
+    }
+
+    if (buttonClicked.classList.contains("buttons")) {
+        if (humanScore > originalHScore) {
+            buttonClicked.style.backgroundColor = "#52a447";
+            compElement.style.backgroundColor = "#FF0000";
+        }
+        else if ((humanScore === originalHScore) && (computerScore > originalCScore)) {
+            buttonClicked.style.backgroundColor = "#FF0000";
+            compElement.style.backgroundColor = "#52a447";
+        }
+        else if ((humanScore === originalHScore) && (computerScore === originalCScore)) {
+            buttonClicked.style.backgroundColor = "#FBE106";
+            compElement.style.backgroundColor = "#FBE106";
+
+        }
+    }
+  }
+
