@@ -5,15 +5,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(59, 59, 59)
+  background-color: rgb(59, 59, 59);
+  font-family: monospace;
 }
 
 #gamearea {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 60%;
     max-width: 1200px;
-    gap: 20px;
+    gap: 50px;
 }
 
 .box {
@@ -36,6 +37,21 @@ body {
     width: 100%;
     justify-content: center;
 }
+
+#computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#computer .selections {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+}
+
 .title {
     font-size: 24px;
     font-weight: bold;
@@ -49,7 +65,7 @@ body {
     gap: 10px;
 }
 
-.buttons {
+.buttons, .cbuttons {
     font-size: 16px;
     background-color: #efefef;
     border: none;
@@ -60,10 +76,15 @@ body {
     margin-bottom: 5px;
 }
 
+.cbuttons {
+    cursor: default;
+}
+
 .imgs {
     width: 60px;
     height: auto;
     object-fit: contain;
+    mix-blend-mode: color-burn;
 }
 
 .computer-score, .human-score {
@@ -85,4 +106,11 @@ body {
 
 .selections {
     flex-direction: row;
+}
+
+#computer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
 }

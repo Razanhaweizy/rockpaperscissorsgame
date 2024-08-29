@@ -44,14 +44,14 @@ function playRound(computerChoice, humanChoice) {
 
     if (humanChoice === "rock") {
         switch (computerChoice) {
-            case "rock": result.textContent = "You have drawn!"; break;
+            //case "rock": result.textContent = "You have drawn!"; break;
             case "paper": {
-                result.textContent = "You lose :(";
+                //result.textContent = "You lose :(";
                 cScore.textContent = `computer score: ${++computerScore}`;
                 break;
             }
             case "scissors": {
-                result.textContent = "You win!!! :)";
+                //result.textContent = "You win!!! :)";
                 hScore.textContent= `player score: ${++humanScore}`;
                 break;
             }
@@ -60,13 +60,13 @@ function playRound(computerChoice, humanChoice) {
     else if (humanChoice === "paper") {
         switch(computerChoice) {
             case "rock": {
-                result.textContent = "You win! Yippie!!!";
+                //result.textContent = "You win! Yippie!!!";
                 hScore.textContent = `player score: ${++humanScore}`;
                 break;
             }
-            case "paper": result.textContent = "Draw ;/"; break;
+            //case "paper": result.textContent = "Draw ;/"; break;
             case "scissors": {
-                result.textContent = "Loser!!!";
+                //result.textContent = "Loser!!!";
                 cScore.textContent = `computer score: ${++computerScore}`;
                 break;
             }
@@ -75,16 +75,16 @@ function playRound(computerChoice, humanChoice) {
     else if (humanChoice === "scissors") {
         switch(computerChoice) {
             case "rock": {
-                result.textContent = "Boohoo, you lose :(";
+                //result.textContent = "Boohoo, you lose :(";
                 cScore.textContent = `computer score: ${++computerScore}`;
                 break;
             }
             case "paper": {
-                result.textContent = "Congrats! You win :)";
+                //result.textContent = "Congrats! You win :)";
                 hScore.textContent = `player score: ${++humanScore}`;
                 break;
             }
-            case "scissors": result.textContent = "You tied ;/"; break;
+            //case "scissors": result.textContent = "You tied ;/"; break;
         }
     }
 }
