@@ -16,6 +16,8 @@ const restartSound = new Audio("audios/restart.wav");
 const drawSound = new Audio("audios/draw.wav");
 const roundWon = new Audio("audios/roundwon.wav");
 const roundLost = new Audio("audios/roundlost.wav");
+const gameWon = new Audio("audios/gamewon.wav");
+const gameLost = new Audio("audios/gamelost.wav");
 
 const restart = document.querySelector(".restart");
 
@@ -48,12 +50,15 @@ buttons.forEach((btn) => {
         playRound(computerChoice, humanChoice, btn);
         }
         if (computerScore >= 5) {
-            //return result.textContent = "you lost the game";
-            window.location.href = "lose.html";
-        }
-        else if (humanScore >= 5) {
-            //return result.textContent = "you won the game";
-            window.location.href = "win.html"
+            gameLost.play();
+            gameLost.onended = () => {
+                window.location.href = "lose.html";
+            };
+        } else if (humanScore >= 5) {
+            gameWon.play();
+            gameWon.onended = () => {
+                window.location.href = "win.html";
+            };
         }
     });
 })
