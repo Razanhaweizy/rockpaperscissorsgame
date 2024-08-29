@@ -7,19 +7,31 @@ body {
   height: 100vh;
   background-color: rgb(59, 59, 59);
   font-family: monospace;
+  flex-direction: column;
+}
+
+#title {
+    justify-content: start;
+    align-items: start;
+    justify-content: center;
+    margin-bottom: 0px;
+    color: #e9e7e7;
+    font-size: 20px;
 }
 
 #gamearea {
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    align-items: start;
+    width: 80%;
     max-width: 1200px;
     gap: 50px;
 }
 
 .box {
     flex: 1;
-    background-color: rgb(156, 155, 155);
+    background-color: #9c9b9b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
@@ -67,6 +79,7 @@ body {
 
 .buttons, .cbuttons {
     font-size: 16px;
+    font-weight: bolder;
     background-color: #efefef;
     border: none;
     border-radius: 25px;

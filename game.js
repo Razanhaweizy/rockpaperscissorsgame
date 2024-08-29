@@ -128,6 +128,6 @@ function colorButton(buttonClicked, originalHScore, originalCScore, compChoice) 
         setTimeout(() => {
             buttonClicked.style.backgroundColor ="#efefef";
             compElement.style.backgroundColor = "#efefef";
-        }, 1000);
+        }, 1100);
   }
 
